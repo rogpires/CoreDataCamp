@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		03B951622904A3BF00FA342C /* CoreDataCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B951652904A3BF00FA342C /* CoreDataCampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCampApp.swift; sourceTree = "<group>"; };
-		03B951672904A3BF00FA342C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		03B951672904A3BF00FA342C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		03B951692904A3C000FA342C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03B9516C2904A3C000FA342C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		03B951782904A5A700FA342C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 		03B951642904A3BF00FA342C /* CoreDataCamp */ = {
 			isa = PBXGroup;
 			children = (
+				03B951652904A3BF00FA342C /* CoreDataCampApp.swift */,
 				03B9517A2904A6E000FA342C /* Data */,
 				03B951752904A3DD00FA342C /* Model */,
 				03B951742904A3D000FA342C /* ViewModel */,
@@ -77,7 +78,6 @@
 		03B951732904A3C700FA342C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				03B951652904A3BF00FA342C /* CoreDataCampApp.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

@@ -11,14 +11,43 @@ import CoreData
 class ViewModel: ObservableObject {
     
     let container: NSPersistentContainer
+    @Published var saveEntities: [FruitEntity] = []
     
     init() {
-        container = NSPersistentContainer(name: "")
+        container = NSPersistentContainer(name: "FruitsContainer")
         container.loadPersistentStores { (description, error) in
-            if let error = error {
+            if error != nil {
                 print("Error")
+            } else {
+                print("SuccessFully load Core Data!")
             }
         }
+        fetchFruits()
         
+    }
+    
+    func fetchFruits() {
+        let request = NSFetchRequest<FruitEntity>(entityName: "FruitEntity")
+        
+        do {
+          saveEntities = try container.viewContext.fetch(request)
+        } catch let error {
+            print("Error Fech. \(error)")
+        }
+    }
+    
+    func addFruit(text: String) {
+        let newFruit = FruitEntity(context: container.viewContext)
+        newFruit.name = text
+        saveData()
+    }
+    
+    func saveData() {
+        do {
+            try container.viewContext.save()
+            fetchFruits()
+        } catch let error {
+            print("Error Saved. \(error)")
+        }
     }
 }
