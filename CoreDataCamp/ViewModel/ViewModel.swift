@@ -42,6 +42,20 @@ class ViewModel: ObservableObject {
         saveData()
     }
     
+    func updateFruit(entity: FruitEntity) {
+        let currentName = entity.name ?? ""
+        let newName = currentName + "!"
+        entity.name = newName
+        saveData()
+    }
+    
+    func deleteFuit(indexSet: IndexSet) {
+        guard let index = indexSet.first else { return }
+        let entity = saveEntities[index]
+        container.viewContext.delete(entity)
+        saveData()
+    }
+    
     func saveData() {
         do {
             try container.viewContext.save()

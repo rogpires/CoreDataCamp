@@ -42,7 +42,11 @@ struct ContentView: View {
                 List {
                     ForEach(vm.saveEntities) { entity in
                         Text(entity.name ?? "No Name")
+                            .onTapGesture {
+                                vm.updateFruit(entity: entity)
+                            }
                     }
+                    .onDelete(perform: vm.deleteFuit(indexSet:))
                 }
                 .listStyle(PlainListStyle())
             }
